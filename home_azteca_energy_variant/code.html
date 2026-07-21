@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Azteca Football | La Nueva Piel</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "primary-fixed-dim": "#ffb3ae",
+                "inverse-primary": "#ffb3ae",
+                "surface-container-high": "#ebe7e7",
+                "tertiary-container": "#64686b",
+                "on-primary-container": "#ffe0dd",
+                "on-secondary-container": "#626566",
+                "on-tertiary-fixed-variant": "#43474a",
+                "secondary-fixed": "#e1e3e4",
+                "surface-tint": "#c0001f",
+                "background": "#fcf9f8",
+                "on-primary-fixed": "#410004",
+                "on-secondary-fixed": "#191c1d",
+                "on-tertiary-container": "#e4e7ea",
+                "outline": "#916f6c",
+                "surface-dim": "#dcd9d9",
+                "outline-variant": "#e6bdba",
+                "surface-container": "#f0edec",
+                "surface-container-low": "#f6f3f2",
+                "on-secondary-fixed-variant": "#454748",
+                "surface-bright": "#fcf9f8",
+                "on-tertiary-fixed": "#181c1e",
+                "inverse-surface": "#313030",
+                "surface": "#fcf9f8",
+                "primary-container": "#ce1126",
+                "primary": "#a30019",
+                "surface-variant": "#e5e2e1",
+                "surface-container-highest": "#e5e2e1",
+                "on-background": "#1c1b1b",
+                "tertiary-fixed": "#e0e3e6",
+                "tertiary": "#4c5053",
+                "error-container": "#ffdad6",
+                "on-primary-fixed-variant": "#930015",
+                "on-surface-variant": "#5c3f3d",
+                "error": "#ba1a1a",
+                "inverse-on-surface": "#f3f0ef",
+                "secondary-fixed-dim": "#c5c7c8",
+                "on-secondary": "#ffffff",
+                "tertiary-fixed-dim": "#c4c7ca",
+                "on-error": "#ffffff",
+                "secondary": "#5c5f60",
+                "surface-container-lowest": "#ffffff",
+                "on-error-container": "#93000a",
+                "on-primary": "#ffffff",
+                "on-tertiary": "#ffffff",
+                "secondary-container": "#e1e3e4",
+                "on-surface": "#1c1b1b",
+                "primary-fixed": "#ffdad7"
+        },
+        "borderRadius": {
+                "DEFAULT": "1rem",
+                "lg": "2rem",
+                "xl": "3rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "md": "16px",
+                "xs": "4px",
+                "2xl": "64px",
+                "margin-desktop": "48px",
+                "sm": "8px",
+                "gutter": "20px",
+                "xl": "40px",
+                "lg": "24px",
+                "base": "4px",
+                "margin-mobile": "16px"
+        },
+        "fontFamily": {
+                "headline-md": [
+                        "Inter"
+                ],
+                "display-lg-mobile": [
+                        "Inter"
+                ],
+                "label-bold": [
+                        "Inter"
+                ],
+                "headline-xl-mobile": [
+                        "Inter"
+                ],
+                "body-md": [
+                        "Inter"
+                ],
+                "label-sm": [
+                        "Inter"
+                ],
+                "headline-xl": [
+                        "Inter"
+                ],
+                "display-lg": [
+                        "Inter"
+                ],
+                "body-lg": [
+                        "Inter"
+                ]
+        },
+        "fontSize": {
+                "headline-md": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "display-lg-mobile": [
+                        "48px",
+                        {
+                                "lineHeight": "48px",
+                                "letterSpacing": "-0.04em",
+                                "fontWeight": "900"
+                        }
+                ],
+                "label-bold": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "headline-xl-mobile": [
+                        "32px",
+                        {
+                                "lineHeight": "36px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "800"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "letterSpacing": "0em",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-sm": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.02em",
+                                "fontWeight": "500"
+                        }
+                ],
+                "headline-xl": [
+                        "40px",
+                        {
+                                "lineHeight": "44px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "800"
+                        }
+                ],
+                "display-lg": [
+                        "72px",
+                        {
+                                "lineHeight": "72px",
+                                "letterSpacing": "-0.04em",
+                                "fontWeight": "900"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "28px",
+                                "letterSpacing": "0em",
+                                "fontWeight": "400"
+                        }
+                ]
+        }
+      },
+    },
+  }
+</script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #fcf9f8; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .hero-bleed { clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%); }
+        .reveal-on-hover .product-action { transform: translateY(10px); opacity: 0; transition: all 0.3s ease; }
+        .reveal-on-hover:hover .product-action { transform: translateY(0); opacity: 1; }
+        @keyframes subtle-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.8; } }
+        .pulse-soft { animation: subtle-pulse 3s infinite ease-in-out; }
+    </style>
+</head>
+<body class="text-on-surface">
+<!-- Top Navigation -->
+<nav class="bg-surface border-b border-outline-variant sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-margin-desktop py-sm max-w-7xl mx-auto">
+<div class="font-bold text-headline-md uppercase tracking-tighter text-on-surface">
+                Azteca Football
+            </div>
+<div class="hidden md:flex items-center gap-lg">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 text-label-bold" href="#">Hombres</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-bold" href="#">Mujeres</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-bold" href="#">Niños</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-bold" href="#">Colecciones</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-bold" href="#">Selección Mexicana</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined p-2 hover:bg-surface-container-low rounded-full transition-colors">person</button>
+<button class="material-symbols-outlined p-2 hover:bg-surface-container-low rounded-full transition-colors">shopping_bag</button>
+<button class="md:hidden material-symbols-outlined p-2">menu</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative overflow-hidden bg-inverse-surface text-surface h-[921px] flex items-center">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center opacity-60" data-alt="Cinematic, high-contrast studio photography of the new Mexico National Team jersey. A professional athlete stands in a powerful, focused pose against a dark, moody background with subtle atmospheric smoke. Sharp dramatic lighting highlights the intricate patterns and textures of the fabric, celebrating its elite performance engineering and cultural heritage. The overall mood is intense, premium, and authoritative." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBb8hQBSs7_m8h2E4_7vnacSmgf_gPo_Qu-_8VkFCH7yEoI5mYA6U8fZMW39AvNg5BnOxcHr6J3uo6b2R3_od18w0VNd8Jey4cSeiHP8exnyIwwgSu5YdiT9HOFYMyrWKh87B-_O3nn0pLPzUVm2BV5FGF8yaiJf16mpZViuM5xXOqM2eNO2lb3V28z6_jG6SyQJaJ8HIR-iB7o-wURS-1UqILPFvQmRcfeQKsLlc7NP9gyR393hjEO')"></div>
+</div>
+<div class="relative z-10 w-full px-margin-desktop max-w-7xl mx-auto">
+<div class="max-w-3xl">
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg leading-tight mb-lg">
+                    LA NUEVA PIEL DE MÉXICO YA LLEGÓ
+                </h1>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary-container text-on-primary font-black py-4 px-8 uppercase tracking-widest hover:bg-primary transition-colors duration-300 rounded-full">
+                        Comprar ahora
+                    </button>
+<button class="border-2 border-surface text-surface font-black py-4 px-8 uppercase tracking-widest hover:bg-surface hover:text-inverse-surface transition-all duration-300 rounded-full">
+                        Ver colección
+                    </button>
+</div>
+</div>
+</div>
+</header>
+<!-- Countdown Section -->
+<section class="py-xl bg-surface-container-lowest border-b border-outline-variant">
+<div class="max-w-7xl mx-auto px-margin-desktop">
+<div class="flex flex-col md:flex-row justify-between items-center gap-lg">
+<div class="text-center md:text-left">
+<h2 class="text-headline-md text-primary-container uppercase mb-2">Próximo Lanzamiento</h2>
+<p class="text-body-md text-on-surface-variant">Colección Entrenamiento Élite 2024</p>
+</div>
+<div class="flex gap-lg text-center">
+<div class="flex flex-col">
+<span class="font-black text-headline-xl md:text-display-lg-mobile text-on-surface" id="days">02</span>
+<span class="text-label-sm uppercase tracking-tighter text-outline">Días</span>
+</div>
+<div class="font-black text-headline-xl md:text-display-lg-mobile text-outline">:</div>
+<div class="flex flex-col">
+<span class="font-black text-headline-xl md:text-display-lg-mobile text-on-surface" id="hours">14</span>
+<span class="text-label-sm uppercase tracking-tighter text-outline">Horas</span>
+</div>
+<div class="font-black text-headline-xl md:text-display-lg-mobile text-outline">:</div>
+<div class="flex flex-col">
+<span class="font-black text-headline-xl md:text-display-lg-mobile text-on-surface" id="minutes">45</span>
+<span class="text-label-sm uppercase tracking-tighter text-outline">Min</span>
+</div>
+<div class="font-black text-headline-xl md:text-display-lg-mobile text-outline">:</div>
+<div class="flex flex-col">
+<span class="font-black text-headline-xl md:text-display-lg-mobile text-on-surface" id="seconds">30</span>
+<span class="text-label-sm uppercase tracking-tighter text-outline">Seg</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Products Bento Grid -->
+<section class="py-xl max-w-7xl mx-auto px-margin-desktop">
+<div class="flex justify-between items-end mb-lg">
+<h2 class="text-headline-xl uppercase">Los más buscados</h2>
+<a class="text-label-bold text-primary-container hover:underline flex items-center gap-2" href="#">
+                Ver todos los productos <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<!-- Product Card 1 -->
+<div class="group relative flex flex-col bg-surface-container-lowest overflow-hidden reveal-on-hover border border-transparent hover:border-outline-variant transition-all duration-500 rounded-lg">
+<div class="absolute top-4 left-4 z-10">
+<span class="bg-primary text-on-primary px-3 py-1 text-label-sm uppercase font-bold rounded-full">Hot</span>
+</div>
+<div class="aspect-[3/4] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="High-resolution product shot of the Mexico National Team Authentic Home Jersey 2024. The jersey features a deep green base with intricate tonal feathered patterns inspired by Aztec art. The fabric has a visible technical micro-mesh texture. Clean white background, minimalist lighting focusing on the high-quality stitching and the woven federation crest. Premium athletic aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEf6MULblmbxkMXbdmdKWyl_ZLpoPXcdm_CTDVlQ9kPeqkrFzl8TvK00_H1duGcC7hjBi982t8QwvbTdYPkw4L4Pc_c8_ZeM33fTJhAs42UXtCRCBh-NEOGc1ZzdHWS4DaD3epmr3bRUDJagcFFo6YScJ9ULiv3Gg79Pz7xUS_q5Y71oN0BkoDBrEVRUt1kGGQFy0EY-olyyavQoUzRXYXQt4JnnaFKaZCnR2TTcYi8bbhKntflRy4"/>
+</div>
+<div class="p-md">
+<h3 class="text-body-md font-semibold text-on-surface">Authentic Home Jersey 2024</h3>
+<p class="text-label-sm text-on-surface-variant mb-2">Selección Nacional</p>
+<p class="text-headline-md text-primary-container">$2,499 MXN</p>
+</div>
+<div class="product-action absolute bottom-4 left-4 right-4">
+<button class="w-full bg-on-surface text-surface py-3 text-label-bold uppercase font-bold hover:bg-primary-container transition-colors rounded-full">Agregar al carrito</button>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group relative flex flex-col bg-surface-container-lowest overflow-hidden reveal-on-hover border border-transparent hover:border-outline-variant transition-all duration-500 rounded-lg">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Full shot of the Mexico National Team Away Jersey 2024. The design features a light grey base with vibrant green and red accents along the sides and collar. Detailed close-up on the premium fabric and moisture-wicking technology. Studio lighting, minimalist shadows, clean white background, representing elite football gear for athletes." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnKOGg05GXI2Y5SsMzFolJjHqYZrANoEiA1EE_oo1xf8qLiXGzuBVrkkSzt5gRKDbkYOInxvrbdZYyqFciXT_7riNH85jQk5F8R47BTfOgnpkh0eFrm4UWhNWq5r5aIP3drlYqsF9tb7gqDbpVKVZHPKKHMjqbGNFku2Etn1nlSI9k5g-Q0vdCJExSM4OlxobcjIuIL9x92tbCCeRZ9Wa8LP7dfZHCEX7ru15ZsWwd-E_sHWwd9_Ie"/>
+</div>
+<div class="p-md">
+<h3 class="text-body-md font-semibold text-on-surface">Away Kit Performance</h3>
+<p class="text-label-sm text-on-surface-variant mb-2">Selección Nacional</p>
+<p class="text-headline-md text-primary-container">$1,899 MXN</p>
+</div>
+<div class="product-action absolute bottom-4 left-4 right-4">
+<button class="w-full bg-on-surface text-surface py-3 text-label-bold uppercase font-bold hover:bg-primary-container transition-colors rounded-full">Agregar al carrito</button>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group relative flex flex-col bg-surface-container-lowest overflow-hidden reveal-on-hover border border-transparent hover:border-outline-variant transition-all duration-500 rounded-lg">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Minimalist product photography of a black Aztec-inspired training jacket. The jacket features sleek deep black fabric with subtle reflective emerald green details and the Azteca Football branding. It is shown on a clean light grey background with soft ambient shadows. The design is modern, athletic, and high-end, targeting professional fans and players." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9bwOph2J9cMAcW1K8s0R45xGNN_5B9aaLZiRuDbYi068MsIbgUZ9JWBbOzPEq6Kl3T6BSSd5Y1WVoe6A66sOxoBxQsES6ae-fflmwHJ_k1vRqnCQFkcw2T781wV7kvKzoeK3jEN-SqumhzsDMXiOs65zfBwK-Wi-BmcDXm89akHQ6nV3Tetq2l-SEcIxLrioSfXM900yBE0b8C7W2oHxofyN_2dLS9B5vdvtJ-0xfSAAngaNGuNGl"/>
+</div>
+<div class="p-md">
+<h3 class="text-body-md font-semibold text-on-surface">Training Pro Jacket</h3>
+<p class="text-label-sm text-on-surface-variant mb-2">Colección Azteca</p>
+<p class="text-headline-md text-primary-container">$2,199 MXN</p>
+</div>
+<div class="product-action absolute bottom-4 left-4 right-4">
+<button class="w-full bg-on-surface text-surface py-3 text-label-bold uppercase font-bold hover:bg-primary-container transition-colors rounded-full">Agregar al carrito</button>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group relative flex flex-col bg-surface-container-lowest overflow-hidden reveal-on-hover border border-transparent hover:border-outline-variant transition-all duration-500 rounded-lg">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Elite football training shorts in a dark emerald green. Minimalist design featuring lightweight, breathable mesh fabric. Professional product shoot on a plain white surface. Detailed focus on the ergonomic seams and the high-quality Azteca Football logo in silver embroidery. Crisp lighting, sophisticated presentation for premium athletic wear." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4xQuCjRZkbjTxM2qrKBbptyQa550ZGi2p1tWmXj5rgxPYyvLTTrQg6RtEX2LSuoME8voAgnP_I9sj-fDboY0Yvn1nVwPvLkNv8hLPXsGzk3I0wu01rDrbwoiaAMluZFvDxIz7XYTrhrPuXXsQafSALjNQmORDjkGRdFoK7CV5FluK88EykjoBfCFM4qEhD0pgkxf7-A8-mwMQY1mkRCurlgGA_zum95uJgpbIDAZKHQ0eiCHsMW2b"/>
+</div>
+<div class="p-md">
+<h3 class="text-body-md font-semibold text-on-surface">Pro Shorts Elite</h3>
+<p class="text-label-sm text-on-surface-variant mb-2">Entrenamiento</p>
+<p class="text-headline-md text-primary-container">$999 MXN</p>
+</div>
+<div class="product-action absolute bottom-4 left-4 right-4">
+<button class="w-full bg-on-surface text-surface py-3 text-label-bold uppercase font-bold hover:bg-primary-container transition-colors rounded-full">Agregar al carrito</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Feature Split Section -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-0 overflow-hidden">
+<div class="relative h-[600px] group cursor-pointer overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-1000 group-hover:scale-110" data-alt="Dynamic shot of local youth football players in Mexico City playing on a urban pitch during golden hour. They are wearing Azteca Football jerseys. The lighting is warm and cinematic, capturing movement and passion for the sport. The background shows city architecture, blending traditional culture with modern performance lifestyle. High-energy, authentic photography." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCFiO9-hf27gdloHIrINbwKxB9QJYW1T8dT2kpzVYc4vMdNTPicHIaZeIuPcb1Mvs78FRei-t6W9RFVjrori-ojRyBVElb78SgIXRQavVcZvTmPjppNVgAoxjEa1I0I2TmreHxuZz-k1bHEtl1OhgLJiNFJeLwm9FxYB6ec7y1gy7oH5s0IZwyLRe2-BpEJ1bRcCEJjfw1uE6M4VXdyAoxDyAiWNT370JuFR8W5gSR5lEGx3CIx4E3Q')"></div>
+<div class="absolute inset-0 bg-on-background/40 flex flex-col justify-end p-margin-desktop">
+<h3 class="font-black text-headline-xl text-surface uppercase mb-4">Cultura de Barrio</h3>
+<p class="text-body-lg text-surface max-w-sm mb-6">Inspirada por las calles donde nace el talento. Nuestra nueva línea de streetwear.</p>
+<button class="w-fit text-surface border-b border-surface pb-1 text-label-bold uppercase tracking-widest hover:text-primary-fixed hover:border-primary-fixed transition-colors">Explorar Streetwear</button>
+</div>
+</div>
+<div class="relative h-[600px] group cursor-pointer overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-1000 group-hover:scale-110" data-alt="Close up of high-tech football boot details featuring advanced materials and textures. Carbon fiber elements and vibrant lime green accents on a sleek black chassis. The image is hyper-focused with shallow depth of field, emphasizing engineering excellence and speed. Studio setting with cool, industrial lighting. The aesthetic is clean, sharp, and futuristic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCPP10xiCBapfht6y7YmfQXk-_14vpgs0m-rmH0B-m4_kC_rEP5FEtGf5sSKzXfWLzQ832AbDp9_etKXVdsMRqF26Wnlp3c8WeUNFWsqGrMymvfXedB9rCHj6Oq05DtBLqoGZQLtwGS1_pV-6mA6tHwhMEYB7EslDZTw6UMpzVTXiqQJ63mWYueePSM5sS44R7C_UqlpK0J1dbGNZYSesJNG3HNJR2p2SBDpWDjejyacHHc3y63YCO_')"></div>
+<div class="absolute inset-0 bg-on-background/40 flex flex-col justify-end p-margin-desktop">
+<h3 class="font-black text-headline-xl text-surface uppercase mb-4">Ingeniería Elite</h3>
+<p class="text-body-lg text-surface max-w-sm mb-6">Desarrollado en laboratorios de alto rendimiento para los jugadores más exigentes.</p>
+<button class="w-fit text-surface border-b border-surface pb-1 text-label-bold uppercase tracking-widest hover:text-primary-fixed hover:border-primary-fixed transition-colors">Tecnología Azteca</button>
+</div>
+</div>
+</section>
+<!-- Newsletter Section -->
+<section class="py-xl bg-inverse-surface text-surface">
+<div class="max-w-7xl mx-auto px-margin-desktop text-center">
+<h2 class="font-black text-display-lg-mobile md:text-headline-xl uppercase mb-sm">Únete a la elite</h2>
+<p class="text-body-lg text-surface-variant max-w-2xl mx-auto mb-lg">Acceso exclusivo a lanzamientos limitados, eventos de comunidad y noticias del fútbol mexicano.</p>
+<form class="max-w-md mx-auto flex flex-col sm:flex-row gap-2">
+<input class="flex-grow bg-surface/10 border border-surface/20 text-surface px-6 py-4 focus:outline-none focus:border-surface placeholder:text-surface/50 text-body-md rounded-full" placeholder="Tu correo electrónico" type="email"/>
+<button class="bg-surface text-on-surface font-bold uppercase py-4 px-8 hover:bg-primary-container hover:text-on-primary transition-all duration-300 rounded-full">Suscribirse</button>
+</form>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest text-on-surface py-xl border-t border-outline-variant">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-lg px-margin-desktop max-w-7xl mx-auto">
+<div class="space-y-sm">
+<div class="font-black text-headline-md text-primary-container mb-md uppercase tracking-tighter">Azteca Football</div>
+<p class="text-on-surface-variant text-body-md opacity-80 max-w-xs">
+                    Elite Performance, Cultural Heritage. El estándar de oro del fútbol en México.
+                </p>
+</div>
+<div>
+<h4 class="font-bold text-headline-md text-sm mb-md uppercase">Compañía</h4>
+<ul class="space-y-3 text-body-md text-on-surface-variant">
+<li><a class="hover:text-primary-container transition-colors" href="#">Brand Story</a></li>
+<li><a class="hover:text-primary-container transition-colors" href="#">Newsletter Signup</a></li>
+<li><a class="hover:text-primary-container transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-headline-md text-sm mb-md uppercase">Soporte</h4>
+<ul class="space-y-3 text-body-md text-on-surface-variant">
+<li><a class="hover:text-primary-container transition-colors" href="#">Customer Support</a></li>
+<li><a class="hover:text-primary-container transition-colors" href="#">Payment Methods</a></li>
+<li><a class="hover:text-primary-container transition-colors" href="#">Envíos y Devoluciones</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-headline-md text-sm mb-md uppercase">Síguenos</h4>
+<div class="flex gap-4">
+<a class="material-symbols-outlined text-on-surface-variant hover:text-primary-container transition-colors" href="#">public</a>
+<a class="material-symbols-outlined text-on-surface-variant hover:text-primary-container transition-colors" href="#">share</a>
+<a class="material-symbols-outlined text-on-surface-variant hover:text-primary-container transition-colors" href="#">forum</a>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-margin-desktop mt-xl pt-md border-t border-outline-variant text-center md:text-left text-on-surface-variant text-label-sm opacity-60">
+            © 2024 Azteca Football. Elite Performance, Cultural Heritage. Todos los derechos reservados.
+        </div>
+</footer>
+<script>
+        // Simple Countdown Logic
+        function updateCountdown() {
+            const daysEl = document.getElementById('days');
+            const hoursEl = document.getElementById('hours');
+            const minutesEl = document.getElementById('minutes');
+            const secondsEl = document.getElementById('seconds');
+
+            let d = parseInt(daysEl.innerText);
+            let h = parseInt(hoursEl.innerText);
+            let m = parseInt(minutesEl.innerText);
+            let s = parseInt(secondsEl.innerText);
+
+            s--;
+            if (s < 0) { s = 59; m--; }
+            if (m < 0) { m = 59; h--; }
+            if (h < 0) { h = 23; d--; }
+            if (d < 0) { d = 0; h = 0; m = 0; s = 0; }
+
+            daysEl.innerText = d.toString().padStart(2, '0');
+            hoursEl.innerText = h.toString().padStart(2, '0');
+            minutesEl.innerText = m.toString().padStart(2, '0');
+            secondsEl.innerText = s.toString().padStart(2, '0');
+        }
+        setInterval(updateCountdown, 1000);
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-lg');
+            } else {
+                nav.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+</body></html>

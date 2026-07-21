@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed-dim": "#ffb3ae",
+                    "on-tertiary-fixed-variant": "#77302e",
+                    "inverse-primary": "#84d7ae",
+                    "primary": "#004e34",
+                    "on-primary-container": "#90e4ba",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed": "#ffdad7",
+                    "tertiary-container": "#904340",
+                    "on-primary": "#ffffff",
+                    "surface-container-highest": "#e0e4de",
+                    "on-surface-variant": "#3f4943",
+                    "surface-container-high": "#e5e9e4",
+                    "error": "#ba1a1a",
+                    "surface-bright": "#f7faf5",
+                    "outline-variant": "#bec9c1",
+                    "on-error": "#ffffff",
+                    "surface-variant": "#e0e4de",
+                    "surface-dim": "#d7dbd6",
+                    "primary-fixed": "#9ff4c9",
+                    "on-error-container": "#93000a",
+                    "inverse-on-surface": "#eef2ed",
+                    "on-surface": "#181d1a",
+                    "on-secondary-fixed": "#410004",
+                    "surface-container-low": "#f1f5ef",
+                    "on-primary-fixed-variant": "#005237",
+                    "surface": "#f7faf5",
+                    "secondary": "#bb001e",
+                    "on-secondary-fixed-variant": "#930015",
+                    "primary-container": "#006847",
+                    "outline": "#6f7a72",
+                    "background": "#f7faf5",
+                    "secondary-container": "#e12531",
+                    "tertiary-fixed": "#ffdad7",
+                    "on-background": "#181d1a",
+                    "surface-container": "#ebefea",
+                    "tertiary": "#722c2b",
+                    "primary-fixed-dim": "#84d7ae",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#ffb3ae",
+                    "on-tertiary-container": "#ffc4c0",
+                    "on-secondary-container": "#fffbff",
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed": "#002114",
+                    "surface-tint": "#096c4b",
+                    "inverse-surface": "#2d312e",
+                    "on-tertiary-fixed": "#3d0507"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-lg": "48px",
+                    "container-max": "1440px",
+                    "gutter": "24px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "64px",
+                    "stack-sm": "12px",
+                    "base": "8px",
+                    "stack-xl": "80px",
+                    "stack-md": "24px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Montserrat"],
+                    "headline-sm": ["Montserrat"],
+                    "headline-xl": ["Montserrat"],
+                    "body-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-lg": ["Montserrat"],
+                    "display-lg-mobile": ["Montserrat"]
+            },
+            "fontSize": {
+                    "display-lg": ["80px", {"lineHeight": "88px", "letterSpacing": "-0.04em", "fontWeight": "900"}],
+                    "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "display-lg-mobile": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "900"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        .product-card:hover .cart-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #bec9c1;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased custom-scrollbar">
+<!-- TopNavBar -->
+<nav class="sticky top-0 z-50 bg-surface border-b border-outline-variant">
+<div class="flex justify-between items-center w-full px-margin-desktop py-stack-sm max-w-container-max mx-auto">
+<div class="flex items-center gap-stack-md">
+<a class="font-display-lg text-headline-sm uppercase tracking-tighter text-on-surface" href="#">Azteca Football</a>
+<div class="hidden md:flex items-center gap-8 ml-8">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Hombres</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Mujeres</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Niños</a>
+<a class="font-label-md text-label-md text-primary font-bold border-b-2 border-primary pb-1" href="#">Colecciones</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Selección Mexicana</a>
+</div>
+</div>
+<div class="flex items-center gap-stack-sm">
+<button class="p-2 hover:bg-surface-container-low rounded-full transition-colors active:scale-95">
+<span class="material-symbols-outlined text-primary">search</span>
+</button>
+<button class="p-2 hover:bg-surface-container-low rounded-full transition-colors active:scale-95">
+<span class="material-symbols-outlined text-primary">person</span>
+</button>
+<button class="p-2 hover:bg-surface-container-low rounded-full transition-colors active:scale-95 relative">
+<span class="material-symbols-outlined text-primary">shopping_bag</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-secondary rounded-full"></span>
+</button>
+</div>
+</div>
+</nav>
+<main class="max-w-container-max mx-auto px-margin-desktop py-stack-lg min-h-screen">
+<!-- Header & Breadcrumbs -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-stack-lg gap-stack-sm">
+<div>
+<nav class="flex items-center gap-2 text-label-sm font-label-sm text-outline mb-2">
+<span>Inicio</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span>Colecciones</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-surface">Selección Mexicana</span>
+</nav>
+<h1 class="font-headline-xl text-headline-xl uppercase">Orgullo Nacional</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Equipamiento oficial de la Selección Nacional de México.</p>
+</div>
+<div class="flex items-center gap-4">
+<span class="font-label-md text-label-md text-outline uppercase">Ordenar por</span>
+<div class="relative group">
+<button class="flex items-center gap-2 font-label-md text-label-md border-b border-on-surface pb-1">
+                        Relevancia
+                        <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<div class="absolute right-0 mt-2 w-48 bg-surface border border-outline-variant shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity z-10">
+<ul class="py-2">
+<li><a class="block px-4 py-2 hover:bg-surface-container-low font-label-md text-label-md" href="#">Relevancia</a></li>
+<li><a class="block px-4 py-2 hover:bg-surface-container-low font-label-md text-label-md" href="#">Precio: Menor a Mayor</a></li>
+<li><a class="block px-4 py-2 hover:bg-surface-container-low font-label-md text-label-md" href="#">Precio: Mayor a Menor</a></li>
+<li><a class="block px-4 py-2 hover:bg-surface-container-low font-label-md text-label-md" href="#">Novedades</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-stack-lg">
+<!-- Sidebar Filters -->
+<aside class="md:col-span-3 lg:col-span-2 space-y-stack-lg">
+<div class="space-y-stack-md">
+<h3 class="font-label-md text-label-md uppercase tracking-widest text-on-surface border-b border-outline-variant pb-2">Talla</h3>
+<div class="grid grid-cols-2 gap-2">
+<button class="py-3 border border-outline-variant font-label-md text-label-md hover:border-on-surface transition-colors">CH</button>
+<button class="py-3 border border-on-surface bg-on-surface text-surface font-label-md text-label-md">M</button>
+<button class="py-3 border border-outline-variant font-label-md text-label-md hover:border-on-surface transition-colors">G</button>
+<button class="py-3 border border-outline-variant font-label-md text-label-md hover:border-on-surface transition-colors">XG</button>
+</div>
+</div>
+<div class="space-y-stack-md">
+<h3 class="font-label-md text-label-md uppercase tracking-widest text-on-surface border-b border-outline-variant pb-2">Color</h3>
+<div class="flex flex-wrap gap-3">
+<button class="group flex flex-col items-center gap-1">
+<span class="w-8 h-8 rounded-full border border-outline-variant bg-[#006847]"></span>
+<span class="text-[10px] font-label-sm uppercase opacity-0 group-hover:opacity-100 transition-opacity">Verde</span>
+</button>
+<button class="group flex flex-col items-center gap-1">
+<span class="w-8 h-8 rounded-full border border-outline-variant bg-[#FFFFFF]"></span>
+<span class="text-[10px] font-label-sm uppercase opacity-0 group-hover:opacity-100 transition-opacity">Blanco</span>
+</button>
+<button class="group flex flex-col items-center gap-1">
+<span class="w-8 h-8 rounded-full border border-outline-variant bg-[#181d1a]"></span>
+<span class="text-[10px] font-label-sm uppercase opacity-0 group-hover:opacity-100 transition-opacity">Negro</span>
+</button>
+<button class="group flex flex-col items-center gap-1">
+<span class="w-8 h-8 rounded-full border border-outline-variant bg-[#CE1126]"></span>
+<span class="text-[10px] font-label-sm uppercase opacity-0 group-hover:opacity-100 transition-opacity">Rojo</span>
+</button>
+</div>
+</div>
+<div class="space-y-stack-md">
+<h3 class="font-label-md text-label-md uppercase tracking-widest text-on-surface border-b border-outline-variant pb-2">Rango de Precio</h3>
+<div class="px-2 pt-4">
+<input class="w-full h-1 bg-surface-container-highest appearance-none cursor-pointer accent-primary" max="5000" min="0" type="range"/>
+<div class="flex justify-between mt-4">
+<span class="font-label-sm text-label-sm text-on-surface-variant">$0</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">$5,000 MXN</span>
+</div>
+</div>
+</div>
+<div class="pt-stack-md">
+<button class="w-full py-4 bg-on-surface text-surface font-label-md text-label-md uppercase tracking-widest hover:bg-primary transition-colors">Filtrar</button>
+<button class="w-full py-3 mt-2 text-outline-variant font-label-sm text-label-sm uppercase underline decoration-outline-variant hover:text-on-surface hover:decoration-on-surface transition-all">Limpiar Filtros</button>
+</div>
+</aside>
+<!-- Product Grid -->
+<section class="md:col-span-9 lg:col-span-10">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-gutter gap-y-stack-lg">
+<!-- Product 1 -->
+<div class="product-card group relative flex flex-col">
+<div class="relative overflow-hidden bg-surface-container-low aspect-[3/4]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="High-fashion studio photography of the official Mexico National Team home jersey for 2024. The jersey features an intricate feathered pattern inspired by Aztec heritage in deep emerald green and vibrant red. The lighting is cinematic, highlighting the technical breathable mesh texture and the premium embroidered crest. Clean minimalist background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhcouAfSQIIyxIPUR6Iq-CHZCwNi-Clv3y5OIQ3BFHipapNLgEqxBL88pi4qSenA5hAjR9K6qOLuAwCLQQO1FyffDfBBg0DHa5DBecmp4syHsFHYjsvxNm_7g1Jo75IMezraiAjLeV-YEMi9seUaxoN9-SOsleFfPJkkADCiui7RLojjH9LhQy5XQNKybJTCfodFO8PrTV_5OE00wN8RFQUjZFhOomXwaZP0u8-ESHae-fGNnpmgxY"/>
+<div class="absolute top-4 left-4 bg-on-surface text-surface px-3 py-1 font-label-sm text-[10px] uppercase tracking-widest">Nuevo</div>
+<div class="cart-overlay absolute inset-0 bg-on-surface/5 flex items-end p-gutter opacity-0 translate-y-4 transition-all duration-300">
+<button class="w-full py-4 bg-on-surface text-surface font-label-md text-label-md uppercase hover:bg-primary transition-colors active:scale-95 shadow-xl">Agregar al Carrito</button>
+</div>
+</div>
+<div class="mt-4 space-y-1">
+<h4 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-tighter">Jersey Local 2024</h4>
+<p class="font-body-md font-bold text-on-surface">$1,899 MXN</p>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="product-card group relative flex flex-col">
+<div class="relative overflow-hidden bg-surface-container-low aspect-[3/4]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Official Mexico National Team away jersey showcased in a premium lifestyle setting. The jersey is crisp white with subtle grey serpentine graphics representing Quetzalcoatl. Technical details like the copper-colored accents and heat-pressed logos are sharp under bright, high-key studio lighting. Professional athletic wear presentation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDv94Sl5S7bxrL8XUxyrvsFT4e6DWHukxUk2drOPUc4kydH_lWhyv2vpcB4sGCkwhvnmsUQHRX5xjlws3IthFI7JV05EYJ3d87RJHmHgWMDCXqi-pSCRIQP9rrfUbenCxpJPRXNFYad-hFphdrnJp1QhTaX2LAmx6A5auWlcEMM9Knt5SmeRLaekJkGimaNa_WU_G04oAWnIzGcb_yAQbYrDGEaXCv2p--RTZuZHRe3FZWCqj6l65Hx"/>
+<div class="cart-overlay absolute inset-0 bg-on-surface/5 flex items-end p-gutter opacity-0 translate-y-4 transition-all duration-300">
+<button class="w-full py-4 bg-on-surface text-surface font-label-md text-label-md uppercase hover:bg-primary transition-colors active:scale-95 shadow-xl">Agregar al Carrito</button>
+</div>
+</div>
+<div class="mt-4 space-y-1">
+<h4 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-tighter">Jersey Visita 2024</h4>
+<p class="font-body-md font-bold text-on-surface">$1,899 MXN</p>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="product-card group relative flex flex-col">
+<div class="relative overflow-hidden bg-surface-container-low aspect-[3/4]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Men's black training shirt for the Mexico National team. The garment is made of advanced moisture-wicking fabric with tonal neon green side panels. Flat-lay professional photography emphasizing the streamlined performance cut and the lightweight feel. Modern athletic aesthetic on a pristine white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCu_30EFOyeKSgF9eFe9454Y3p0TupBaU43p44ckLXxXxerxuL7rJeiNX_Sy8TmsMt-WbA-64qM5VcPcPesqxJ1zyLrUydu21JYGTor_lLUvdeYOdN4Eq9IQi7uV-X8iwMW14ays7KJ_EHYQIJIsP1wZXV0_lAmCUq3zI_iIZWDA6WlxNmSNxSNQRzOEcz17w9ihaGLYAsFbFfK1NgFga5wzEBjKyruzPmlRS-4tHRLM4jT2EjKu7Vj"/>
+<div class="absolute top-4 left-4 bg-primary text-surface px-3 py-1 font-label-sm text-[10px] uppercase tracking-widest">Authentic</div>
+<div class="cart-overlay absolute inset-0 bg-on-surface/5 flex items-end p-gutter opacity-0 translate-y-4 transition-all duration-300">
+<button class="w-full py-4 bg-on-surface text-surface font-label-md text-label-md uppercase hover:bg-primary transition-colors active:scale-95 shadow-xl">Agregar al Carrito</button>
+</div>
+</div>
+<div class="mt-4 space-y-1">
+<h4 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-tighter">Playera de Entrenamiento</h4>
+<p class="font-body-md font-bold text-on-surface">$1,299 MXN</p>
+</div>
+</div>
+<!-- Product 4 -->
+<div class="product-card group relative flex flex-col">
+<div class="relative overflow-hidden bg-surface-container-low aspect-[3/4]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Official Anthem Jacket for Mexico National Team in deep Mexican green with cream-colored sleeves. Detailed shot of the high collar and ribbed cuffs. The lighting captures the sheen of the premium polyester blend fabric. Cinematic close-up on the chest crest in a high-fashion, minimalist athletic style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmZrJbMPLhf-7MXi3qjT6oou8_uT2gi332d6MQ7whEcUT_D1q0EaHvfZEiEybLtcKb2R25R6vEqATc0neD8Yh0UprEbaEiveEhYk2dpMonFjWFgOHjW9d3uPmijBtrkhhn3WL_434TjBZwVEnjtcTkuReev75eHGijEE4J9CnAuEAqzqaDjvvak7JIc0fTM4FwHryQSDQBebSd1u2ZZagxvUvbi5wZrzpLnvG7pXaFoeGODJskKk9e"/>
+<div class="cart-overlay absolute inset-0 bg-on-surface/5 flex items-end p-gutter opacity-0 translate-y-4 transition-all duration-300">
+<button class="w-full py-4 bg-on-surface text-surface font-label-md text-label-md uppercase hover:bg-primary transition-colors active:scale-95 shadow-xl">Agregar al Carrito</button>
+</div>
+</div>
+<div class="mt-4 space-y-1">
+<h4 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-tighter">Chamarra de Himno</h4>
+<p class="font-body-md font-bold text-on-surface">$2,499 MXN</p>
+</div>
+</div>
+<!-- Product 5 -->
+<div class="product-card group relative flex flex-col">
+<div class="relative overflow-hidden bg-surface-container-low aspect-[3/4]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Women's specific cut Mexico National Team home jersey. Professional model shot highlighting the tailored fit and feminine silhouette while maintaining the aggressive graphic identity. Bright softbox lighting, clean studio background, emphasizing performance lifestyle for athletes." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnMHIogY9JDTP2sZ_B_XzjQK7vcrmoKewF_zQ76GLLHuWpTBXNsCuO4-GBQ88czqn67GDRohH57p8TsP0LVHcqkRNKq9BbO8jVZegws5Jfwx3ALeeYzBNR_mQ1bFUM0DpfLWDUx9hYC13CisTtrgvs6kenT6PM9I3CtRuWgJo0uM6WUEmMMdjpQBxEHbhaQv9qjSU6B5ujM2gVlbxZQpp-bqQx5uqdfXgItvC6WAKL1FJkvCkKX-MF"/>
+<div class="cart-overlay absolute inset-0 bg-on-surface/5 flex items-end p-gutter opacity-0 translate-y-4 transition-all duration-300">
+<button class="w-full py-4 bg-on-surface text-surface font-label-md text-label-md uppercase hover:bg-primary transition-colors active:scale-95 shadow-xl">Agregar al Carrito</button>
+</div>
+</div>
+<div class="mt-4 space-y-1">
+<h4 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-tighter">Jersey Local Femenil</h4>
+<p class="font-body-md font-bold text-on-surface">$1,799 MXN</p>
+</div>
+</div>
+<!-- Product 6 -->
+<div class="product-card group relative flex flex-col">
+<div class="relative overflow-hidden bg-surface-container-low aspect-[3/4]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Mexico National Team travel polo shirt in charcoal grey. The shirt features a subtle monochrome logo and premium tipped collar. Professional photography with focus on the pique fabric texture and high-quality buttons. Minimalist, sophisticated aesthetic for off-pitch wear." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUnUN0hw9qL862aAWQTQyR1AHCLIsEk7Hc4yq2qc1NcGBlokfyvxRKhO58XzuurgLzthgnR45w02RCdPczAy9D6vbJJNQ_A2d7p1bIyMzO2frXLxs4VWC29VfJqQ3GL6wRSFAux5BXZH2w-6lapBsQIugmAodIgZXDcFde8s5wWzhcksejdaSvHca7dBmr6X74ggtPu58G2cS0AncGVQ3e79iAnnKA444hZBSfH4faAcP2vxSD-ScY"/>
+<div class="cart-overlay absolute inset-0 bg-on-surface/5 flex items-end p-gutter opacity-0 translate-y-4 transition-all duration-300">
+<button class="w-full py-4 bg-on-surface text-surface font-label-md text-label-md uppercase hover:bg-primary transition-colors active:scale-95 shadow-xl">Agregar al Carrito</button>
+</div>
+</div>
+<div class="mt-4 space-y-1">
+<h4 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-tighter">Polo de Viaje</h4>
+<p class="font-body-md font-bold text-on-surface">$1,199 MXN</p>
+</div>
+</div>
+<!-- Product 7 -->
+<div class="product-card group relative flex flex-col">
+<div class="relative overflow-hidden bg-surface-container-low aspect-[3/4]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Technical windbreaker jacket for Mexico National Team training sessions. Lightweight, hooded, in a striking black and green gradient design. Studio lighting creates dynamic shadows, showing off the water-resistant finish and ergonomic seam placement. Professional gear display." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDomzAsquxSHI50VUslKip9gbFPO07BF0cibCkh1B6AN8oHt3Z_-C1wZitJ-RXHeFU1WoNnCZwrnEjSHTHgvATLXc6kCVms_6NfaX5pSZAIltdCINw3aJbI0dbFSMCMVcPCP7xJueVHvCmjgZ5eNEz8zxt_AbD7ZX5X6QHl8EExjnpxQ4KdsqU1-hsMx4avIuDAamFIrqorTDk-8o7rYFOs7q0R7WtXiZGCMha123SQ2Fl18PO6a9NV"/>
+<div class="cart-overlay absolute inset-0 bg-on-surface/5 flex items-end p-gutter opacity-0 translate-y-4 transition-all duration-300">
+<button class="w-full py-4 bg-on-surface text-surface font-label-md text-label-md uppercase hover:bg-primary transition-colors active:scale-95 shadow-xl">Agregar al Carrito</button>
+</div>
+</div>
+<div class="mt-4 space-y-1">
+<h4 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-tighter">Rompevientos Training</h4>
+<p class="font-body-md font-bold text-on-surface">$2,199 MXN</p>
+</div>
+</div>
+<!-- Product 8 -->
+<div class="product-card group relative flex flex-col">
+<div class="relative overflow-hidden bg-surface-container-low aspect-[3/4]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Official Mexico National Team pre-match jersey featuring a vibrant all-over pink and black geometric pattern. High-energy studio lighting, emphasizing the bold 'Rosa Mexicano' color palette used for warming up. Detail shots of the crest and the performance breathable back panel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiokM37-jIRQDTt-8PTQB1kesHOY6UAO0UNtlXTM5G2XYha-eJDErFPficNmx5ULv5VMpPx_h1oPE3bg941oACPa1gjXYPOgE9hvu4HrppSiaYq3NOQKgvpNE5oED1MpRWno4NOnb8eV9nvSRkc7K-R4_tdd9g0xgySN83mCL_yBFhc3O_-WX7-i-_vL04WWglxTPFc_hX4DfuIBi-KHd36gk1aQlqZst067da0RGUTh-xAY_Du_hK"/>
+<div class="absolute top-4 left-4 bg-secondary text-surface px-3 py-1 font-label-sm text-[10px] uppercase tracking-widest">Edición Limitada</div>
+<div class="cart-overlay absolute inset-0 bg-on-surface/5 flex items-end p-gutter opacity-0 translate-y-4 transition-all duration-300">
+<button class="w-full py-4 bg-on-surface text-surface font-label-md text-label-md uppercase hover:bg-primary transition-colors active:scale-95 shadow-xl">Agregar al Carrito</button>
+</div>
+</div>
+<div class="mt-4 space-y-1">
+<h4 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-tighter">Jersey Pre-Match</h4>
+<p class="font-body-md font-bold text-on-surface">$1,499 MXN</p>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="flex justify-center items-center gap-4 mt-stack-xl">
+<button class="w-12 h-12 flex items-center justify-center border border-outline-variant hover:border-on-surface transition-colors disabled:opacity-30" disabled="">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<div class="flex items-center gap-2">
+<button class="w-12 h-12 flex items-center justify-center bg-on-surface text-surface font-label-md text-label-md">1</button>
+<button class="w-12 h-12 flex items-center justify-center border border-outline-variant hover:border-on-surface font-label-md text-label-md transition-colors">2</button>
+<button class="w-12 h-12 flex items-center justify-center border border-outline-variant hover:border-on-surface font-label-md text-label-md transition-colors">3</button>
+</div>
+<button class="w-12 h-12 flex items-center justify-center border border-outline-variant hover:border-on-surface transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-on-surface text-surface">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-stack-lg px-margin-desktop py-stack-xl max-w-container-max mx-auto">
+<div class="space-y-stack-md md:col-span-1">
+<h2 class="font-display-lg text-headline-lg text-surface uppercase">Azteca</h2>
+<p class="font-body-md text-body-md opacity-70">Elite Performance, Cultural Heritage. El uniforme del guerrero moderno.</p>
+<div class="flex gap-4 pt-4">
+<a class="opacity-80 hover:opacity-100 transition-opacity" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="opacity-80 hover:opacity-100 transition-opacity" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="opacity-80 hover:opacity-100 transition-opacity" href="#"><span class="material-symbols-outlined">mail</span></a>
+</div>
+</div>
+<div class="space-y-stack-md">
+<h4 class="font-headline-sm text-headline-sm uppercase">Compañía</h4>
+<ul class="space-y-3 font-body-md text-body-md">
+<li><a class="text-surface-variant opacity-80 hover:opacity-100 transition-opacity" href="#">Brand Story</a></li>
+<li><a class="text-surface-variant opacity-80 hover:opacity-100 transition-opacity" href="#">Responsabilidad Social</a></li>
+<li><a class="text-surface-variant opacity-80 hover:opacity-100 transition-opacity" href="#">Newsletter Signup</a></li>
+</ul>
+</div>
+<div class="space-y-stack-md">
+<h4 class="font-headline-sm text-headline-sm uppercase">Soporte</h4>
+<ul class="space-y-3 font-body-md text-body-md">
+<li><a class="text-surface-variant opacity-80 hover:opacity-100 transition-opacity" href="#">Customer Support</a></li>
+<li><a class="text-surface-variant opacity-80 hover:opacity-100 transition-opacity" href="#">Payment Methods</a></li>
+<li><a class="text-surface-variant opacity-80 hover:opacity-100 transition-opacity" href="#">Envíos y Devoluciones</a></li>
+</ul>
+</div>
+<div class="space-y-stack-md">
+<h4 class="font-headline-sm text-headline-sm uppercase">Legales</h4>
+<ul class="space-y-3 font-body-md text-body-md">
+<li><a class="text-surface-variant opacity-80 hover:opacity-100 transition-opacity" href="#">Terms of Service</a></li>
+<li><a class="text-surface-variant opacity-80 hover:opacity-100 transition-opacity" href="#">Privacy Policy</a></li>
+<li><a class="text-surface-variant opacity-80 hover:opacity-100 transition-opacity" href="#">Cookie Policy</a></li>
+</ul>
+</div>
+</div>
+<div class="px-margin-desktop py-stack-sm border-t border-surface/10 max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4 opacity-50">
+<span class="font-label-sm text-label-sm">© 2024 Azteca Football. Elite Performance, Cultural Heritage.</span>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-xl">payments</span>
+<span class="material-symbols-outlined text-xl">credit_card</span>
+<span class="material-symbols-outlined text-xl">account_balance_wallet</span>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions and filter state management
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                if (this.classList.contains('active-state-toggle')) {
+                    this.classList.toggle('bg-on-surface');
+                    this.classList.toggle('text-surface');
+                }
+            });
+        });
+
+        // Simple smooth scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-md');
+            } else {
+                nav.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body></html>

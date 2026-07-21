@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-primary: 'Montserrat', 'Inter', sans-serif;
+  }
+
+  body {
+    font-family: var(--font-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden;
+  }
+}
+
+/* Material Symbols Outlined Icon Helpers */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.material-symbols-outlined.fill {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Custom Azteca Visual Effects */
+.azteca-gold-gradient {
+  background: linear-gradient(135deg, #FFE088 0%, #E9C349 50%, #AF8D11 100%);
+}
+
+.azteca-emerald-glow {
+  box-shadow: 0 0 30px rgba(0, 78, 52, 0.25);
+}
+
+.azteca-red-glow {
+  box-shadow: 0 0 30px rgba(206, 17, 38, 0.3);
+}
+
+.azteca-gold-glow {
+  box-shadow: 0 0 30px rgba(233, 195, 73, 0.3);
+}
+
+/* Subtle Aztec Pattern Background Overlay */
+.azteca-pattern-bg {
+  background-image: radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.05) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+.dark .azteca-pattern-bg {
+  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.04) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Theme Switching Utility Classes */
+.theme-classic {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f7faf5;
+  color: #181d1a;
+}
+
+.theme-obsidian {
+  font-family: 'Chivo', sans-serif;
+  background-color: #131313;
+  color: #e5e2e1;
+}
+
+.theme-obsidian h1, 
+.theme-obsidian h2, 
+.theme-obsidian h3, 
+.theme-obsidian h4, 
+.theme-obsidian h5, 
+.theme-obsidian h6,
+.theme-obsidian .font-heading {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.theme-energy {
+  font-family: 'Inter', sans-serif;
+  background-color: #fcf9f8;
+  color: #1c1b1b;
+}
+
+.theme-energy button,
+.theme-energy .badge,
+.theme-energy .pill-card {
+  border-radius: 9999px !important;
+}
+
+.theme-obsidian button,
+.theme-obsidian input,
+.theme-obsidian .card {
+  border-radius: 0px !important;
+}
